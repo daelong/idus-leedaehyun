@@ -22,7 +22,7 @@
   </div>
 </template>
 <script lang="ts">
-import { reactive, toRefs, defineComponent } from "vue";
+import { defineComponent } from "vue";
 export default defineComponent({
   //이건 세로
   //필수값: img, 라벨, 타이틀, Highight 설명?
