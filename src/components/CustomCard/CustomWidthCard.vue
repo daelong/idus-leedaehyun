@@ -24,9 +24,6 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 export default defineComponent({
-  //이건 세로
-  //필수값: img, 라벨, 타이틀, Highight 설명?
-  //선택값: 별점, 상세 설명
   props: {
     title: {
       type: String,
