@@ -67,12 +67,6 @@ export default defineComponent({
       default: "",
     },
   },
-  setup(props: any) {
-    const state = reactive({});
-    return {
-      ...toRefs(state),
-    };
-  },
 });
 </script>
 <style lang="scss" scoped>
@@ -82,26 +76,11 @@ $breakpoint-mobile-card-size: 320px;
 
 // 모바일에서 태블릿
 $breakpoint-tabletToMobile: 535px;
-$breakpoint-tabletToMobile-card-size: 270px;
-
-// 태블릿
-$breakpoint-tablet: 720px;
-$breakpoint-tablet-card-size: 260px;
-
-// 태블릿에서 노트북
-$breakpoint-laptopToTablet: 960px;
-$breakpoint-laptopToTablet-card-size: 250px;
-
-// 노트북
-$breakpoint-laptop: 1024px;
-$breakpoint-laptop-card-size: 240px;
 
 // 노트북에서 데스크탑
 $breakpoint-desktopToLaptop: 1500px;
-$breakpoint-desktopToLaptop-card-size: 230px;
 
 // 데스크탑
-$breakpoint-desktop: 1800px;
 $breakpoint-desktop-card-size: 200px;
 
 .card {
@@ -114,7 +93,7 @@ $breakpoint-desktop-card-size: 200px;
   border-radius: 4px;
 
   &__img {
-    flex-grow: 4;
+    width: 100%;
   }
 
   &__main {
@@ -154,7 +133,6 @@ $breakpoint-desktop-card-size: 200px;
     padding: 0 10px;
     text-align: start;
 
-    // color: #666;
     &__grade {
       margin: 9px 1.5px 0 1.5px;
       display: inline-block;
@@ -172,56 +150,20 @@ $breakpoint-desktop-card-size: 200px;
 }
 
 @media (min-width: #{$breakpoint-mobile}) and (max-width: #{$breakpoint-tabletToMobile - 1px}) {
-  .card__img {
-    width: $breakpoint-mobile-card-size;
-    height: $breakpoint-mobile-card-size;
+  .card {
+    width: 50%;
   }
   .card__detail__explanation {
-    width: calc($breakpoint-mobile-card-size - 20px);
+    width: calc(100% - 40px);
   }
 }
 
-// 모바일에서 태블릿 : 최소 '모바일에서 태블릿'사이즈부터 ~ 최대 '태블릿'사이즈까지
-@media (min-width: #{$breakpoint-tabletToMobile}) and (max-width: #{$breakpoint-tablet - 1px}) {
-  .card__img {
-    width: $breakpoint-tabletToMobile-card-size;
-    height: $breakpoint-tabletToMobile-card-size;
-  }
-  .card__detail__explanation {
-    width: calc($breakpoint-tabletToMobile-card-size - 20px);
-  }
-}
-
-// 태블릿 : 최소'태블릿'사이즈부터 ~ 최대 '태블릿에서 노트북'사이즈까지
-@media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-laptopToTablet - 1px}) {
-  .card__img {
-    width: $breakpoint-laptop-card-size;
-    height: $breakpoint-laptop-card-size;
-  }
-  .card__detail__explanation {
-    width: calc($breakpoint-laptop-card-size - 20px);
-  }
-}
-
-// 태블릿에서 노트북 : 최소 '태블릿에서 노트북'사이즈부터 ~ 최대 '노트북'사이즈까지
-@media (min-width: #{$breakpoint-laptopToTablet}) and (max-width: #{$breakpoint-laptop - 1px}) {
-  .card__img {
-    width: $breakpoint-desktopToLaptop-card-size;
-    height: $breakpoint-desktopToLaptop-card-size;
-  }
-  .card__detail__explanation {
-    width: calc($breakpoint-desktopToLaptop-card-size - 20px);
-  }
-}
-
-// 노트북 : 최소 '노트북'사이즈부터 ~ 최대 '노트북에서 데스크탑'사이즈까지
-@media (min-width: #{$breakpoint-laptop}) and (max-width: #{$breakpoint-desktopToLaptop - 1px}) {
-  .card__img {
+@media (min-width: #{$breakpoint-tabletToMobile}) {
+  .card {
     width: $breakpoint-desktop-card-size;
-    height: $breakpoint-desktop-card-size;
   }
   .card__detail__explanation {
-    width: calc($breakpoint-desktop-card-size - 20px);
+    width: calc($breakpoint-desktop-card-size - 40px);
   }
 }
 </style>

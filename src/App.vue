@@ -30,13 +30,14 @@ export default {
         grade: 4,
         explanation: "700원 -> 500원",
       },
+
       card2: {
         label: "Card2 label",
         title: "Card2 title",
         discountPrice: "1000원",
         cost: "2000원",
         grade: 3,
-        explanation: "2000원 -> 1000원",
+        explanation: "lorem ipsum dolor sit amet,lorem ipsum dolor sit amet,",
       },
       card3: {
         label: "Card3 label",
