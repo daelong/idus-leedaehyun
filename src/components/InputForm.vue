@@ -6,6 +6,7 @@
         v-model="firstChar"
         cols="30"
         rows="5"
+        :maxlength="maxChars"
         placeholder="자신의 의견을 간단히 적어주세요."
       ></textarea>
       <p class="textarea-box__count">{{ maxChars - firstCharCount }}</p>
@@ -17,6 +18,7 @@
           v-model="secondChar"
           cols="30"
           rows="5"
+          :maxlength="maxChars"
           placeholder="자신의 의견을 간단히 적어주세요."
         ></textarea>
         <p class="textarea-box__count">{{ maxChars - secondCharCount }}</p>
@@ -39,6 +41,7 @@
         rows="5"
         placeholder="주문 요청사항을 입력해주세요"
         disabled
+        :maxlength="maxChars"
       ></textarea>
       <p class="textarea-box__count">{{ maxChars - thirdCharCount }}</p>
     </div>
@@ -118,7 +121,7 @@ export default defineComponent({
     &__count {
       position: absolute;
       right: 8px;
-      bottom: -8px;
+      bottom: -12px;
       color: #999 !important;
       font-size: 14px;
     }
